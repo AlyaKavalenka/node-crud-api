@@ -10,3 +10,8 @@ export function errorPathInMethod(
     `Error: not found path "${path}" in method "${method.toUpperCase()}"`,
   );
 }
+
+export function errorInvalidId(res: ServerResponse, path: string, id: string) {
+  res.statusCode = 400;
+  res.end(`Error: invalid id "${id}" in path "${path}"`);
+}

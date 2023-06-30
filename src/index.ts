@@ -2,6 +2,7 @@ import http from 'http';
 import url from 'url';
 import getEndpoint from './endpoints/get';
 import postEndpoint from './endpoints/post';
+import putEndpoint from './endpoints/put';
 
 const hostname = 'localhost';
 const port = 4000;
@@ -20,6 +21,10 @@ const server = http.createServer((req, res) => {
 
         case 'post':
           postEndpoint(path, req, res);
+          break;
+
+        case 'put':
+          putEndpoint(path, req, res);
           break;
         default:
           res.statusCode = 404;
