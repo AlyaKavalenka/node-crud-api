@@ -7,6 +7,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "type": "module",
   "scripts": {
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "jest --silent",
