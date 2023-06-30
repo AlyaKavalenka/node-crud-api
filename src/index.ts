@@ -1,7 +1,9 @@
 import http from 'http';
+import { Users } from '../types/types';
 
 const hostname = 'localhost';
 const port = 4000;
+const users: Users = [];
 
 const server = http.createServer((_, res) => {
   res.statusCode = 200;
