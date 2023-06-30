@@ -20,9 +20,7 @@ export default function putEndpoint(
     });
 
     if (typeof +id === 'number') {
-      console.log(userIdInArray);
       if (userIdInArray !== -1) {
-        console.log('in user id in array if');
         req.on('end', () => {
           try {
             const userReq: User = JSON.parse(body);
