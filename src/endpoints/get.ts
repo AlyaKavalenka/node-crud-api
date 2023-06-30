@@ -1,11 +1,8 @@
 import { errorPathInMethod } from '../constants/errorMessages';
 import users from '../data/users';
-import { ServerResponse, IncomingMessage } from 'http';
+import { ServerResponse } from 'http';
 
-export default function getEndpoint(
-  path: string,
-  res: ServerResponse<IncomingMessage> & { req: IncomingMessage },
-) {
+export default function getEndpoint(path: string, res: ServerResponse) {
   const pathArr = path.split('/');
 
   if (pathArr.length < 5) {

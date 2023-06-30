@@ -1,6 +1,7 @@
 import http from 'http';
 import url from 'url';
 import getEndpoint from './endpoints/get';
+import postEndpoint from './endpoints/post';
 
 const hostname = 'localhost';
 const port = 4000;
@@ -17,6 +18,9 @@ const server = http.createServer((req, res) => {
           getEndpoint(path, res);
           break;
 
+        case 'post':
+          postEndpoint(path, req, res);
+          break;
         default:
           res.statusCode = 404;
           res.end(`Error: not found method "${method}"`);
