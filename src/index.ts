@@ -4,9 +4,12 @@ import getEndpoint from './endpoints/get';
 import postEndpoint from './endpoints/post';
 import putEndpoint from './endpoints/put';
 import deleteEndpoint from './endpoints/delete';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const hostname = 'localhost';
-const port = 4000;
+const port = +(process.env.PORT || 4000);
 
 const server = http.createServer((req, res) => {
   if (req.url) {

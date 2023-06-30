@@ -1,7 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { errorInvalidId, errorPathInMethod } from '../constants/errorMessages';
 import users from '../data/users';
-import { User } from '../../types/types';
+import { User } from '../types/types';
 
 export default function putEndpoint(
   path: string,

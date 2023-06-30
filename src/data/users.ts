@@ -1,4 +1,4 @@
-import { Users } from '../../types/types';
+import { Users } from '../types/types';
 
 const users: Users = [];
 

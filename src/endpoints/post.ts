@@ -1,6 +1,6 @@
 import users from '../data/users';
 import { IncomingMessage, ServerResponse } from 'http';
-import { User } from '../../types/types';
+import { User } from '../types/types';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function postEndpoint(
