@@ -3,6 +3,7 @@ import url from 'url';
 import getEndpoint from './endpoints/get';
 import postEndpoint from './endpoints/post';
 import putEndpoint from './endpoints/put';
+import deleteEndpoint from './endpoints/delete';
 
 const hostname = 'localhost';
 const port = 4000;
@@ -25,6 +26,10 @@ const server = http.createServer((req, res) => {
 
         case 'put':
           putEndpoint(path, req, res);
+          break;
+
+        case 'delete':
+          deleteEndpoint(path, res);
           break;
         default:
           res.statusCode = 404;
