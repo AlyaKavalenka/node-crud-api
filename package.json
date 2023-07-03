@@ -10,6 +10,7 @@
   "scripts": {
     "start:dev": "set NODE_ENV=development&&nodemon src/index.ts",
     "start:prod": "set NODE_ENV=production&&webpack --config webpack.config.js && node dist/index.js",
+    "start:multi": "set NODE_ENV=development&&nodemon src/cluster.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "jest --silent",
     "test:verbose": "jest",
