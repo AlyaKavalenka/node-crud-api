@@ -8,6 +8,9 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "start:dev": "set NODE_ENV=development&&nodemon src/index.ts",
+    "start:prod": "set NODE_ENV=production&&webpack --config webpack.config.js && node dist/index.js",
+    "start:multi": "set NODE_ENV=development&&nodemon src/cluster.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "jest --silent",
     "test:verbose": "jest",
@@ -16,23 +19,30 @@
   "devDependencies": {
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
+    "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
+    "dotenv": "^16.3.1",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^4.0.1",
     "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "ts-jest": "^29.1.0",
-    "ts-loader": "^9.4.3",
+    "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "uuid": "^9.0.0",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "axios": "^1.4.0",
     "lodash": "^4.17.21"
   },
-  "main": "index.ts",
+  "main": "dist/index.js",
   "keywords": []
 }
